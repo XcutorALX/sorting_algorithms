@@ -14,19 +14,16 @@ void selection_sort(int *array, size_t size)
 	int temp;
 	size_t i, j;
 
-	if (size < 2)
-		return;
-
-	if (array == NULL)
+	if (size < 2 || array == NULL)
 		return;
 
 	i = 0;
 	while (i < size)
 	{
-		for (j = i; j < size - 1 && array[i] <= array[j]; j++)
+		for (j = i; j < size && array[i] <= array[j]; j++)
 			;
 
-		if (array[i] > array[j])
+		if (j < size && array[i] > array[j])
 		{
 			temp = array[j];
 			array[j] = array[i];
