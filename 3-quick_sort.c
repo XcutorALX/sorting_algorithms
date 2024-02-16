@@ -49,6 +49,6 @@ void quick_sort_helper(int *array, size_t size,
 void quick_sort(int *array, size_t size)
 {
 	if (size < 2 || array == NULL)
-		return
+		return;
 	quick_sort_helper(array, size, array, size);
 }
