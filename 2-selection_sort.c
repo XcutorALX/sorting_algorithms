@@ -12,25 +12,31 @@
 void selection_sort(int *array, size_t size)
 {
 	int temp;
-	size_t i, j;
+	size_t i, j, min_index;
 
 	if (size < 2 || array == NULL)
 		return;
 
 	i = 0;
+	min_index = 0;
 	while (i < size)
 	{
-		for (j = i; j < size && array[i] <= array[j]; j++)
-			;
-
-		if (j < size && array[i] > array[j])
+		min_index = i;
+		j = i;
+		while (j < size)
 		{
-			temp = array[j];
-			array[j] = array[i];
+			if (array[j] < array[min_index])
+				min_index = j;
+			j++;
+		}
+
+		if (min_index != i)
+		{
+			temp = array[min_index];
+			array[min_index] = array[i];
 			array[i] = temp;
 			print_array(array, size);
 		}
-		else
-			i++;
+		i++;
 	}
 }
