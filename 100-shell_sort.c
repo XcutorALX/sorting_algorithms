@@ -18,16 +18,19 @@ void shell_sort(int *array, size_t size)
 	while (i < (size - 1) / 3)
 		i = 3 * i + 1;
 
-	while (i >= 1)
+	while (i > 1)
 	{
-		for (j = size; j + i >= 0; j--)
+		for (j = size - 1; j != size; j--)
 		{
-			if (array[j - i] > array[j])
+			if (array[j] < array[j - i])
 			{
-				temp = array[j - i];
-				array[j - i] = array[j];
-				array[j] = temp;
-			i}
+				temp = array[j];
+				array[j] = array[j - i];
+				array[j - i] = temp;
+			}
+
+			if (j - i == 0)
+				j = size + 1;
 		}
 		i = (i - 1) / 3;
 		print_array(array, size);
@@ -62,10 +65,9 @@ void insertion_sort(int *array, size_t size)
 				array[i + 1] = array[i];
 				array[i] = temp;
 				i = size;
-				swapped++;
 				sorted = 0;
 			}
 		}
 	}
-	printf("%ld\n", swapped);
+	print_array(array, size);
 }
