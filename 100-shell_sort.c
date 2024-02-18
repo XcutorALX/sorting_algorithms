@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * shell_sort: sorts an array using the shell sort algorithm
+ * shell_sort - sorts an array using the shell sort algorithm
  *
  * @array: the array to be sorted
  * @size: the size of the array
@@ -20,23 +20,14 @@ void shell_sort(int *array, size_t size)
 
 	while (i >= 1)
 	{
-		loop  = 0;
-		while (loop < size)
+		for (j = size; j + i >= 0; j--)
 		{
-			prevloop = loop;
-			if (loop + i >= size)
-			      loop = size;	
-			for (j = prevloop; j + i < size && (j - prevloop) < i; j++)
-			{	
-				if (array[j] > array[j + i])
-				{
-					temp = array[j + i];
-					array[j + i] = array[j];
-					array[j] = temp;
-				}
-				loop = j + i + 1;
-			}
-			prevloop = loop;
+			if (array[j - i] > array[j])
+			{
+				temp = array[j - i];
+				array[j - i] = array[j];
+				array[j] = temp;
+			i}
 		}
 		i = (i - 1) / 3;
 		print_array(array, size);
@@ -45,7 +36,7 @@ void shell_sort(int *array, size_t size)
 }
 
 /**
- * insertion_sort_list - sorts an array with the insertion sort algorithm
+ * insertion_sort - sorts an array with the insertion sort algorithm
  *
  * @array: the array to be sorted
  * @size: the size of the array
