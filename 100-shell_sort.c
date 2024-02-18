@@ -11,7 +11,7 @@
 
 void shell_sort(int *array, size_t size)
 {
-	size_t i, j, loop, prevloop;
+	size_t i, j;
 	int temp;
 
 	i = 1;
@@ -47,7 +47,7 @@ void shell_sort(int *array, size_t size)
 
 void insertion_sort(int *array, size_t size)
 {
-	size_t i, swapped;
+	size_t i;
 	int temp, sorted;
 
 	if (array == NULL || size < 2)
