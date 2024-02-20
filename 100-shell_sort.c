@@ -12,7 +12,7 @@
 void shell_sort(int *array, size_t size)
 {
 	size_t i, j;
-	int temp;
+	int temp, sorted;
 
 	i = 1;
 	while (i < (size - 1) / 3)
@@ -20,17 +20,20 @@ void shell_sort(int *array, size_t size)
 
 	while (i > 1)
 	{
-		for (j = size - 1; j != size; j--)
+		sorted = 0;
+		while (!sorted)
 		{
-			if (array[j] < array[j - i])
+			sorted = 1;
+			for (j = 0; j + i < size; j++)
 			{
-				temp = array[j];
-				array[j] = array[j - i];
-				array[j - i] = temp;
+				if (array[j] > array[j + i])
+				{
+					temp = array[j];
+					array[j] = array[j + i];
+					array[j + i] = temp;
+					sorted = 0;
+				}
 			}
-
-			if (j - i == 0)
-				j = size + 1;
 		}
 		i = (i - 1) / 3;
 		print_array(array, size);
