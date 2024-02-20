@@ -54,23 +54,20 @@ int *split(int *array, size_t size)
 
 void merge(int *first, int *sec, int *parent, size_t size)
 {
-	size_t firstSize, secSize, i, j, k;
+	size_t firstSize, i, j, k;
 
 	printf("Merging...\n");
 	printf("[left]: ");
-
 	firstSize = size / 2;
-	secSize = size - firstSize;
-
 	print_array(first, firstSize);
 	printf("[right]: ");
-	print_array(sec, secSize);
+	print_array(sec, size - firstSize);
 	i = 0;
 	j = 0;
 	k = 0;
-	while (i < firstSize || j < secSize)
+	while (i < firstSize || j < (size - firstSize))
 	{
-		if (i < firstSize && j < secSize)
+		if (i < firstSize && j < (size - firstSize))
 		{
 			if (first[i] < sec[j])
 			{
