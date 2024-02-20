@@ -37,5 +37,8 @@ void heap_sort(int *array, size_t size);
 void heapify(int *array, size_t size);
 void siftDown(int *array, size_t size, size_t unsorted, size_t index);
 void swapArr(int *array, size_t size, size_t first, size_t second);
+void radix_sort(int *array, size_t size);
+int significant_digit(size_t place, int num);
+void counting_sort_radix(int *array, size_t size, size_t place);
 
 #endif
