@@ -28,5 +28,9 @@ void insertion_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 int swap(listint_t *firstNode, listint_t *secondNode);
 void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+int *copy(int *array, size_t size);
+int *split(int *array, size_t size);
+void *merge(int *first, int *sec, int *parent, size_t size);
 
 #endif
