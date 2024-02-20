@@ -22,7 +22,8 @@ void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
-void quick_sort_helper(int *array, size_t size, int *original, size_t totalSize);
+void quick_sort_helper(int *array, size_t size,
+		int *original, size_t totalSize);
 void shell_sort(int *array, size_t size);
 void insertion_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
