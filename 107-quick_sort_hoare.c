@@ -6,25 +6,28 @@
  *
  * @start: the start of the partition being sorted
  * @array: an array of integers
+ * @o_array: original array
+ * @o_size: original size
  * @size: the size of the array
  */
 
-void quick_sort_hoare_helper(int *array, size_t start,
-		size_t size)
+void quick_sort_hoare_helper(int *array, size_t size, 
+		int *o_array, size_t o_size)
 {
-	size_t i, j;
+	size_t i, j, pivotIndex;
 	int temp, pivot;
 
-	if (size < 2 || array == NULL || start >= size)
+	if (size < 2 || array == NULL)
 		return;
 
 	i = 0;
-	pivot = array[size - 1];
+	pivotIndex = size - 1;
+	pivot = array[pivotIndex];
 	j = size - 1;
 
 	while (i < j)
 	{
-		while (array[i] < pivot)
+		while (array[i] <= pivot)
 			i++;
 		while (array[j] > pivot)
 			j--;
@@ -34,10 +37,16 @@ void quick_sort_hoare_helper(int *array, size_t start,
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
-			print_array(array, size);
+			print_array(o_array, o_size);
+			if (j == size - 1)
+				pivotIndex = i;
 		}
 	}
-	quick_sort_hoare_helper(array, start + 1, size);
+	temp = array[pivotIndex];
+	array[pivotIndex] = array[j];
+	array[j] = temp;
+	quick_sort_hoare_helper(array, j, o_array, o_size); 
+	quick_sort_hoare_helper(&(array[j + 1]), size - j, o_array, o_size);
 }
 
 /**
@@ -51,5 +60,5 @@ void quick_sort_hoare(int *array, size_t size)
 {
 	if (size < 2 || array == NULL)
 		return;
-	quick_sort_hoare_helper(array, 0, size);
+	quick_sort_hoare_helper(array, size, array, size);
 }
