@@ -40,5 +40,11 @@ void swapArr(int *array, size_t size, size_t first, size_t second);
 void radix_sort(int *array, size_t size);
 int significant_digit(size_t place, int num);
 void counting_sort_radix(int *array, size_t size, size_t place);
+void bitonic_sort(int *array, size_t size);
+int *bitonic_split(int *array, size_t size, size_t o_size, int state);
+void bitonic_merge(int *first, int *sec,
+		int *parent, size_t size, size_t o_size, int state);
+void mergeUp(int *first, int *sec, int *parent, size_t size);
+void mergeDown(int *first, int *sec, int *parent, size_t size);
 
 #endif
