@@ -11,7 +11,7 @@
  * @size: the size of the array
  */
 
-void quick_sort_hoare_helper(int *array, size_t size, 
+void quick_sort_hoare_helper(int *array, size_t size,
 		int *o_array, size_t o_size)
 {
 	size_t i, j, pivotIndex;
@@ -45,7 +45,7 @@ void quick_sort_hoare_helper(int *array, size_t size,
 	temp = array[pivotIndex];
 	array[pivotIndex] = array[j];
 	array[j] = temp;
-	quick_sort_hoare_helper(array, j, o_array, o_size); 
+	quick_sort_hoare_helper(array, j, o_array, o_size);
 	quick_sort_hoare_helper(&(array[j + 1]), size - j, o_array, o_size);
 }
 
