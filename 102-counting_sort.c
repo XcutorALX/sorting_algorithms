@@ -24,8 +24,6 @@ void counting_sort(int *array, size_t size)
 			max_number = array[i];
 	}
 
-	if (max_number == 0)
-		return;
 	counting_array = malloc(sizeof(int) * (max_number + 1));
 	copyArray = malloc(sizeof(int) * size);
 	for (i = 0; i < size; i++)
