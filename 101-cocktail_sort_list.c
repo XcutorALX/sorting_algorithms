@@ -12,7 +12,7 @@ void cocktail_sort_list(listint_t **list)
 	int sorted = 0;
 	listint_t *current, *temp;
 
-	if (*list == NULL)
+	if (*list == NULL || (*list != NULL && (*list)->next == NULL))
 		return;
 	current = *list;
 	while (current->prev != NULL)
