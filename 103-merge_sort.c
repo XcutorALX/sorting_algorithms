@@ -50,7 +50,7 @@ int *split(int *array, size_t size)
  * @size: the size of the parent array
  */
 
-void *merge(int *first, int *sec, int *parent, size_t size)
+void merge(int *first, int *sec, int *parent, size_t size)
 {
 	size_t firstSize, secSize, i, j, k;
 
