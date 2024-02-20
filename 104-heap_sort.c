@@ -13,8 +13,10 @@ void heap_sort(int *array, size_t size)
 {
 	size_t i;
 
-	heapify(array, size);
+	if (size < 2 || array == NULL)
+		return;
 
+	heapify(array, size);
 	for (i = size - 1; i > 0; i--)
 	{
 		swapArr(array, size, 0, i);
