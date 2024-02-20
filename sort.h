@@ -46,5 +46,7 @@ void bitonic_merge(int *first, int *sec,
 		int *parent, size_t size, size_t o_size, int state);
 void mergeUp(int *first, int *sec, int *parent, size_t size);
 void mergeDown(int *first, int *sec, int *parent, size_t size);
+void quick_sort_hoare(int *array, size_t size);
+void quick_sort_hoare_helper(int *array, size_t start, size_t size);
 
 #endif
