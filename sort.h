@@ -32,5 +32,9 @@ void merge_sort(int *array, size_t size);
 int *copy(int *array, size_t size);
 int *split(int *array, size_t size);
 void merge(int *first, int *sec, int *parent, size_t size);
+void heap_sort(int *array, size_t size);
+void heapify(int *array, size_t size);
+void siftDown(int *array, size_t size, size_t unsorted, size_t index);
+void swapArr(int *array, size_t size, size_t first, size_t second);
 
 #endif
